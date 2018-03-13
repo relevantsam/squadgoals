@@ -1,0 +1,9 @@
+.onboarding {
+    max-width: 40rem;
+    margin: auto;
+}
+
+.onboarding .title {
+    text-align: center;
+    font-size: 3.25em;
+}
