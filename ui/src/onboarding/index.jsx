@@ -52,11 +52,11 @@ export default class Onboarding extends Component {
                         </div>
                     </form>
                     <section>
-                        <div class="field is-grouped is-grouped-multiline">
-                            <div class="control">
-                                <div class="tags has-addons">
-                                <span class="tag is-dark is-title-font">SHARD</span>
-                                <span class="tag is-info">{this.getShard()}</span>
+                        <div className="field is-grouped is-grouped-multiline">
+                            <div className="control">
+                                <div className="tags has-addons">
+                                <span className="tag is-dark is-title-font">SHARD</span>
+                                <span className="tag is-info">{this.getShard()}</span>
                                 </div>
                             </div>
                         </div>
