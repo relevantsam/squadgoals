@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bulma": "^0.6.2",
+    "moment": "^2.21.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "react": "^16.2.0",
