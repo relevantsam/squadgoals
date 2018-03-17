@@ -1,0 +1,14 @@
+{
+    "name": "squadgoals",
+    "version": "0.1.0",
+    "private": true,
+    "workspaces": ["squadgoals-ui", "squadgoals-api"],
+    "scripts": {
+        "client": "cd squadgoals-ui && yarn start",
+        "server": "cd squadgoals-api && yarn start",
+        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    },
+    "devDependencies": {
+        "concurrently": "^3.5.0"
+    }
+}
