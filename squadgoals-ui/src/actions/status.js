@@ -10,30 +10,32 @@ export function fetchStatusError(bool) {
 export function statusIsLoading(bool) {
     return {
         type: 'STATUS_IS_LOADING',
-        isLoading: bool
+        hasLoaded: bool
     }
 }
 
-export function fetchStatusSuccess(data) {
+export function fetchStatusSuccess(versionInfo) {
+    console.log('success')
     return {
         type: 'FETCH_STATUS_SUCCESS',
-        data
+        versionInfo
     }
 }
 
 export function fetchStatus() {
+    
     return(dispatch) => {
         axios.get('/api/status').then((data) => {
             if (data.status !== 200) {
+                dispatch(statusIsLoading(false));
                 throw Error(data.statusText);
             }
 
             dispatch(statusIsLoading(false));
 
-            return data;
+            return data.data;
         })
-        .then((response) => response.json())
-        .then((data) => dispatch(fetchStatusSuccess(data)))
+        .then((data) => dispatch(fetchStatusSuccess(data.attributes)))
         .catch((err) => {
             dispatch(fetchStatusError(true));
         })

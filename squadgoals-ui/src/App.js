@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchStatus } from './actions';
 import logo from './assets/images/pubg_logo.png';
 import './assets/vendor/css/bulma.css';
 import './App.css';
@@ -10,22 +12,16 @@ class App extends Component {
     response: ''
   };
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
+    this.props.getStatus();
   }
 
-  callApi = async () => {
-    const response = await fetch('/api/status');
-    const body = await response.json();
-
-
-    console.log(body);
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
-  render() {
+  render = () => {
+    if (this.props.isLoading) {
+      return <p>Loading…</p>;
+    }
+    if (this.props.hasErrored) {
+      return <p>Error, could not retrieve API status</p>;
+    }
     return (
       <div className="App">
         <header className="App-header">
@@ -33,9 +29,27 @@ class App extends Component {
           <h1 className="title">#SQUADGOALS</h1>
         </header>
         <Onboarding />
+        <footer>
+          Connected! API Version <em>{this.props.status.version}</em> released at: 
+          {this.props.status.releasedAt}
+        </footer>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    status: state.status,
+    hasErrored: state.fetchStatusError,
+    isLoading: state.statusIsLoading
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      getStatus: () => dispatch(fetchStatus())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
