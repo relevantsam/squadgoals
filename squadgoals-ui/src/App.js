@@ -3,39 +3,30 @@ import logo from './assets/images/pubg_logo.png';
 import './assets/vendor/css/bulma.css';
 import './App.css';
 
+import Footer from './footer';
 import Onboarding from './onboarding';
 
-class App extends Component {
-  state = {
-    response: ''
-  };
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/api/status');
-    const body = await response.json();
-
-
-    console.log(body);
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
-  render() {
+export default class App extends Component {
+  render = () => {
+    if (this.props.isLoading) {
+      return <p>Loading…</p>;
+    }
+    if (this.props.hasErrored) {
+      return <p>Error, could not retrieve API status</p>;
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="title">#SQUADGOALS</h1>
-        </header>
-        <Onboarding />
+        <main>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="title">#SQUADGOALS</h1>
+          </header>
+          <section className="is-large">
+            <Onboarding />
+          </section>
+        </main>
+        <Footer />
       </div>
     );
   }
 }
-
-export default App;

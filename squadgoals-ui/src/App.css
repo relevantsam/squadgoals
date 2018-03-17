@@ -36,3 +36,17 @@
 .select, select {
   width: 100%;
 }
+
+html, body, .App, #root {
+  height: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+main + footer {
+  flex-shrink: 0;
+}

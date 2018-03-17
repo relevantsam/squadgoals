@@ -5,7 +5,10 @@ This app aims to facilitate squad growth in PUBG by tracking squad progress over
 
 ## Progress Screenshots
 
-![A boring first screen that collects data about the user's platform and region](https://i.imgur.com/1f3wUEm.png)
+![A first screen that collects data about the user's platform and region and shows status and version of pubg API](https://i.imgur.com/7ebctUY.png)
+
+Past:
+ - [first screen](https://i.imgur.com/1f3wUEm.png)
 
 
 ## Developing
