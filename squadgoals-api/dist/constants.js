@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var PUBG_API_URL = "https://api.playbattlegrounds.com";
 var PUBG_API_TOKEN = "SOME-TOKEN-HERE";
-var PORT_NUMBER = 3001;
+var PORT_NUMBER = 5000;
 
 exports.PUBG_API_URL = PUBG_API_URL;
 exports.PUBG_API_TOKEN = PUBG_API_TOKEN;

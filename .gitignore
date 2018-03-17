@@ -1,5 +1,4 @@
 node_modules/
-api/dist
 
 yarn-error.log
 yarn.lock

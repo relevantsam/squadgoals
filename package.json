@@ -5,8 +5,11 @@
     "workspaces": ["squadgoals-ui", "squadgoals-api"],
     "scripts": {
         "client": "cd squadgoals-ui && yarn start",
+        "client-build": "cd squadgoals-ui && yarn build",
         "server": "cd squadgoals-api && yarn start",
-        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+        "server-build": "cd squadgoals-api && yarn build",
+        "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+        "build": "concurrently --kill-others-on-fail \"yarn server-build\" \"yarn client-build\""
     },
     "devDependencies": {
         "concurrently": "^3.5.0"
