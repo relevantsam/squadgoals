@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
     const playerNames = filters.playerNames.split(',');
 
     api.getMatches(shard, filters).then((response) => {
-        console.log(response.length, 'matches found');
         let result = response.map((data) => { 
             return {
                 id: data.id,
