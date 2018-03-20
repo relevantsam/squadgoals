@@ -19,8 +19,16 @@ class PUBGAPI {
             /* Define logging strategy */
             throw err;
         })
-    };
+    }
 
+    getMatches(shard, filters) {
+        return this.api.get(`shards/${shard}/matches`, {
+            filter: filters
+        }).then(({data}) => data, (err) => {
+            /* Define logging strategy */
+            throw err;
+        })
+    }
 }
 
 export default PUBGAPI;
