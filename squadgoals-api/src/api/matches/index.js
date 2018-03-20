@@ -1,4 +1,4 @@
-import PUBGAPI from '../../services/PUBGAPI';
+import { pubgApiWrapper as PUBGAPI } from 'pubg-api-wrapper';
 import { SquadsRouter } from './squad';
 
 const express = require('express');
@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     const shard = req.query.shard || "pc-na";
-    const api = new PUBGAPI();
+    const api = new PUBGAPI(process.env.PUBG_TOKEN);
     let filters = {};
     if(req.query.player) filters = { playerNames: req.query.player};
 

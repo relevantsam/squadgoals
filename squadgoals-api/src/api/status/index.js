@@ -1,10 +1,9 @@
-import PUBGAPI from '../../services/PUBGAPI';
-
+import { pubgApiWrapper as PUBGAPI } from 'pubg-api-wrapper';
 const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const api = new PUBGAPI();
+    const api = new PUBGAPI(process.env.PUBG_TOKEN);
 
     api.getStatus().then((response) => {
         res.status(200).json(response);

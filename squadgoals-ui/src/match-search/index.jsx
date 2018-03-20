@@ -8,7 +8,7 @@ const MatchSearch = ({searchActive, user, fetchMatchesForUser, updateUser}) => {
     const search = (username) => {
         updateUser({...user, name: username})
         searchActive()
-        fetchMatchesForUser(`${user.platform}-${user.region}`, username);
+        fetchMatchesForUser(user.shard, username);
     }
     const debouncedSearch = _.debounce((searchValue) => search(searchValue), 750);
     return ( 

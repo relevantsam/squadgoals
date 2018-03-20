@@ -2,7 +2,10 @@
     "name": "squadgoals",
     "version": "0.1.0",
     "private": true,
-    "workspaces": ["squadgoals-ui", "squadgoals-api"],
+    "workspaces": [
+        "squadgoals-ui",
+        "squadgoals-api"
+    ],
     "scripts": {
         "client": "cd squadgoals-ui && yarn start",
         "client-build": "cd squadgoals-ui && yarn build",
