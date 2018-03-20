@@ -34,7 +34,7 @@ export function fetchStatus() {
 
             return data.data;
         })
-        .then((data) => dispatch(fetchStatusSuccess(data.attributes)))
+        .then((data) => dispatch(fetchStatusSuccess(data)))
         .catch((err) => {
             dispatch(fetchStatusError(true));
         })

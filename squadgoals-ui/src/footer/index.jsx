@@ -5,15 +5,17 @@ import { fetchStatus } from '../actions';
 const moment = require('moment');
 
 const Footer = ({status, getStatus}) => {
-  getStatus();
+  if(status.version === null) getStatus();
 
   return (
     <footer className="footer">
       <div className="container">
         <div className="content has-text-centered">
+        { status.version !== null ?
           <p>
               PUBG API Version <strong>{status.version}</strong> released {moment(status.releasedAt).fromNow()}
-          </p>
+          </p> : <span>Loading..</span>
+        }
         </div>
       </div>
     </footer>

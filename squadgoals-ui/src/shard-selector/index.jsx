@@ -6,14 +6,14 @@ import './styles.css';
 
 import {PLATFORMS, REGIONS} from '../constants';
 
-const Onboarding = ({user, updateUser}) => {
+const ShardSelector = ({user, updateUser}) => {
     const getShard = () => {
         let region = REGIONS.find(r => r.value === user.region).display;
         let platform = PLATFORMS.find(p => p.value === user.platform).display;
         return `${platform} - ${region}`;
     }
     return ( 
-        <article className="onboarding">
+        <article className="shard-selector">
 
             <h2 className="title">
                 Welcome, soldier
@@ -83,4 +83,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Onboarding);
+export default connect(mapStateToProps, mapDispatchToProps)(ShardSelector);
