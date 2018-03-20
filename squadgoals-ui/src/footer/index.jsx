@@ -4,7 +4,7 @@ import { fetchStatus } from '../actions';
 
 const moment = require('moment');
 
-const footer = ({status, getStatus}) => {
+const Footer = ({status, getStatus}) => {
   getStatus();
 
   return (
@@ -34,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(footer);
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

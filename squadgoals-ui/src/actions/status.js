@@ -15,7 +15,6 @@ export function statusIsLoading(bool) {
 }
 
 export function fetchStatusSuccess(versionInfo) {
-    console.log('success')
     return {
         type: 'FETCH_STATUS_SUCCESS',
         versionInfo
