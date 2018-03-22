@@ -5,16 +5,13 @@ This app aims to facilitate squad growth in PUBG by tracking squad progress over
 
 ## Progress Screenshots
 
-### Home
-![A first screen that collects data about the user's platform and region and shows status and version of pubg API](https://i.imgur.com/7ebctUY.png)
-
-### Searching for your recent activity
-
-![A screenshot of a user searching for their name](https://i.imgur.com/wH7B3Ya.png)
+![A screen showing collection of shard data, status and version of API, and a screenshot of a user's recent games and squad members.](https://i.imgur.com/yeTRXDa.png)
 
 ### Archive
 
 Past:
+ - [A first screen that collects data about the user's platform and region and shows status and version of pubg API](https://i.imgur.com/7ebctUY.png)
+ - [A screenshot of a user searching for their name](https://i.imgur.com/wH7B3Ya.png)
  - [first screen](https://i.imgur.com/1f3wUEm.png)
 
 
