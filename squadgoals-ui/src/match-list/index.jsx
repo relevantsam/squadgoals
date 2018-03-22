@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import './styles.css';
+
 import { MatchListItem } from './match-list-item';
 
 const MatchList = ({matches, loading, user}) => {
@@ -9,17 +11,19 @@ const MatchList = ({matches, loading, user}) => {
             <div className="card">
                 <div className="card-content">
                     {loading ? 
-                        <p>Loading ...</p> 
+                        <div>
+                            <p>Loading ...</p>
+                        </div>
                         :
                         <section>
                             <p>You've played <strong>{matches.length}</strong> games recently:</p>
-                            <ul>
+                            <section>
                                 {matches.map((match) => 
-                                    <li>
+                                    <div className="squad" key={match.id}>
                                         <MatchListItem match={match} user={user} />
-                                    </li>
+                                    </div>
                                 )}
-                            </ul>
+                            </section>
                         </section>
                     }
                 </div>
