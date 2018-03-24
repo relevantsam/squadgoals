@@ -46,6 +46,7 @@ html, body, .App, #root {
 }
 main {
   flex: 1 0 auto;
+  background-color: #FBFBFB
 }
 main + footer {
   flex-shrink: 0;
