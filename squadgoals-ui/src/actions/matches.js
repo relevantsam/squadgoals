@@ -25,7 +25,7 @@ export function fetchMatches(shard, userName) {
     
     return(dispatch) => {
         dispatch(matchesAreLoading(true));
-        axios.get(`/api/matches?shard=${shard}&player=${userName}`).then((data) => {
+        axios.get(`/api/matches/squads?shard=${shard}&playerNames=${userName}`).then((data) => {
             if (data.status !== 200) {
                 dispatch(matchesAreLoading(false));
                 throw Error(data.statusText);

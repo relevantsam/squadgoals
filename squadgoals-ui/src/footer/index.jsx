@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchStatus } from '../actions';
 
+import './style.css';
+
 const moment = require('moment');
 
 const Footer = ({status, getStatus}) => {

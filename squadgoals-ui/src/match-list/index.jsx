@@ -20,7 +20,11 @@ const MatchList = ({matches, loading, user}) => {
                             <section>
                                 {matches.map((match) => 
                                     <div className="squad" key={match.id}>
-                                        <MatchListItem match={match} user={user} />
+                                        <MatchListItem 
+                                            matchId={match.id}
+                                            gameMode={match.gameMode}
+                                            roster={match.squad}
+                                            user={user} />
                                     </div>
                                 )}
                             </section>
