@@ -23,11 +23,14 @@ export const MatchListItem = ({matchId, roster, gameMode, user}) => {
     }
     return (
         <div>
-            <h3 className="squad-game-mode">{gameMode.toUpperCase().split('-')[0]} <small>
-                ({gameMode.toUpperCase().split('-')[1] ? 
-                    <span>1<sup>st</sup> </span>: <span>3<sup>rd</sup> </span>} person)</small> -
-                    <span>{roster.stats.rank}<sup>{calculateSuffix(roster.stats.rank)}</sup></span>
-            </h3>
+            <div className="squad-game-info">
+                <div className="squad-game-place">
+                    {roster.stats.rank}<small className="suffix">{calculateSuffix(roster.stats.rank)}</small>
+                </div>
+                <div className="squad-game-mode">                    
+                    {gameMode.toUpperCase().split('-')[0]} {gameMode.toUpperCase().split('-')[1] ? "FPP": "TPP"}
+                </div>
+            </div>
             <section className="squad-members">
                 {renderMembers(roster.participants)}
             </section>
