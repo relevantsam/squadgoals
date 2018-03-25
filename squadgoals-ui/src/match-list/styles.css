@@ -71,10 +71,17 @@
 
 .squad:last-of-type {
     border-bottom: none;
+    padding-bottom: 0;
 }
 
 .squad > div {
     display: flex;
     background-color: #222;
     padding: 1.5em;
+    cursor: pointer;
+    transition: background 150ms linear;
+}
+
+.squad > div:hover {
+    background-color: #1A1A1A;
 }
