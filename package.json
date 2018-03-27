@@ -13,7 +13,8 @@
         "server-build": "cd squadgoals-api && yarn build",
         "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
         "build": "concurrently --kill-others-on-fail \"yarn server-build\" \"yarn client-build\"",
-        "setup": "yarn && node setup.js"
+        "setup": "yarn && node setup.js",
+        "start": "cd squadgoals-ui && cd dist && node index.js"
     },
     "devDependencies": {
         "concurrently": "^3.5.0"
