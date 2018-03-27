@@ -6,6 +6,7 @@
         "axios": "^0.18.0",
         "express": "^4.16.3",
         "kitsu": "^5.0.7",
+        "pg": "^7.4.1",
         "pubg-api-wrapper": "^0.2.2"
     },
     "devDependencies": {

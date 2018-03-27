@@ -1,8 +1,32 @@
 import { PORT_NUMBER, PRODUCTION_NODE_ENV } from './constants';
-import { ApiRouter } from './api';
 
-const express = require('express');
-const path = require('path');
+class App {
+  constructor(token) {
+    if(!token) throw "NO TOKEN";
+  }
+  run(port) {
+    let { DbService } = require('./db');
+
+    const db = new DbService();
+    db.setup();
+
+    const express = require('express');
+    let { ApiRouter } = require('./api');
+    
+    const app = express();
+    app.use('/api', ApiRouter);
+
+    app.use('/', express.static(`${__dirname}/../../ui/build/`));
+
+    // express will serve up index.html if it doesn't recognize the route
+    app.get('*', (req, res) => {
+      const path = require('path');
+      res.sendFile(path.resolve(__dirname, '../../ui/build/', 'index.html'));
+    });
+
+    app.listen(port, () => console.log(`App started on ${port}`));
+  }
+}
 
 if(process.env.NODE_ENV !== PRODUCTION_NODE_ENV) {
   const dotenv = require('dotenv').config('../../../.env');
@@ -10,17 +34,9 @@ if(process.env.NODE_ENV !== PRODUCTION_NODE_ENV) {
   console.log('setting up local env');
 }
 
-const API_TOKEN = process.env.PUBG_TOKEN;
-if(!API_TOKEN) throw "NO TOKEN";
+if(!process.env.PUBG_TOKEN) throw "NO TOKEN";
 
-const app = express();
-app.use('/api', ApiRouter);
 
-app.use('/', express.static(`${__dirname}/../../ui/build/`));
+const app = new App(process.env.PUBG_TOKEN);
 
-// express will serve up index.html if it doesn't recognize the route
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../../ui/build/', 'index.html'));
-});
-
-app.listen(PORT_NUMBER, () => console.log(`App started on ${PORT_NUMBER}`));
+app.run(PORT_NUMBER);
