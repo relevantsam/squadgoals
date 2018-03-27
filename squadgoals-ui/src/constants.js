@@ -1,5 +1,7 @@
 const PLATFORMS = [{display: "PC", value: "pc"}, {display: "XBOX", value: "xbox"} ];
 
+const PLAYER_COLORS = ["yellow", "red", "blue", "green"];
+
 const REGIONS = [
     {
         display: "Asia",
@@ -41,6 +43,6 @@ const REGIONS = [
         value: "sa",
         supportedOn: [ "pc" ]
     }
-]
+];
 
-export { PLATFORMS, REGIONS };
+export { PLATFORMS, PLAYER_COLORS, REGIONS };

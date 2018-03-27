@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: "Roboto","Helvetica Neue",sans-serif;
 }
+
+.constrained {
+  max-width: 40rem;
+  margin: auto;
+}
+
+.App .main-content article {
+    margin-bottom: 1rem;
+}

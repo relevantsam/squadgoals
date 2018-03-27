@@ -1,13 +1,12 @@
 import { combineReducers } from 'redux';
-
-import { statusIsLoading, fetchingStatusHasErrored, status } from './status';
-import { user } from './user';
+import * as MatchesReducers from './matches';
+import * as StatusReducers from './status';
+import * as UserReducers from './user';
 
 const reducers = combineReducers({
-    statusIsLoading,
-    fetchingStatusHasErrored,
-    status,
-    user
+    ...StatusReducers,
+    ...UserReducers,
+    ...MatchesReducers
 });
 
 export { reducers };

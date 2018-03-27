@@ -1,0 +1,80 @@
+.yellow {
+    background-color: #aba722;
+}
+
+.red {
+    background-color: #b1553c;
+}
+
+.blue {
+    background-color: #3b779c;
+}
+
+.green {
+    background-color: #3c753e;
+}
+
+.squad-member__icon {    
+    height: 2rem;
+    width: 2rem;
+    font-family: "Oswald", "Roboto","Helvetica Neue",sans-serif;
+    font-size: 2em;
+    line-height: .925em;
+    margin-right: .75rem;
+    padding: 0 .5rem;
+}
+
+.squad-members {
+    color: #fff;
+    padding: 1rem;
+    flex: 3;
+    padding-left: 1.5rem;
+}
+
+.squad-member {
+    display: flex;
+    line-height: 2em;
+}
+
+.squad-game-info {
+    padding: 1rem 0;
+    font-family: "Oswald", "Roboto","Helvetica Neue",sans-serif;
+    font-size: 2em;
+    font-weight: 800;
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    border-right: 2px solid #444;
+    padding-right: 1rem;
+}
+
+.squad-game-mode {
+    font-size: .75em;
+    color: #444;
+    margin-top: -.65em;
+}
+
+.squad-game-place {
+    font-size: 2em;
+    margin-top: -.35em;
+}
+
+.squad-game-place .suffix {
+    font-size: .5em;
+}
+
+.squad {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    border-bottom: .1rem dashed #AAA;
+}
+
+.squad:last-of-type {
+    border-bottom: none;
+}
+
+.squad > div {
+    display: flex;
+    background-color: #222;
+    padding: 1.5em;
+}

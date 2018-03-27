@@ -6,14 +6,9 @@ import './styles.css';
 
 import {PLATFORMS, REGIONS} from '../constants';
 
-const Onboarding = ({user, updateUser}) => {
-    const getShard = () => {
-        let region = REGIONS.find(r => r.value === user.region).display;
-        let platform = PLATFORMS.find(p => p.value === user.platform).display;
-        return `${platform} - ${region}`;
-    }
+const ShardSelector = ({user, updateUser}) => {
     return ( 
-        <article className="onboarding">
+        <article className="shard-selector">
 
             <h2 className="title">
                 Welcome, soldier
@@ -60,7 +55,7 @@ const Onboarding = ({user, updateUser}) => {
                             <div className="control">
                                 <div className="tags has-addons">
                                 <span className="tag is-dark is-title-font">SHARD</span>
-                                <span className="tag is-info">{getShard()}</span>
+                                <span className="tag is-info">{user.shard}</span>
                                 </div>
                             </div>
                         </div>
@@ -83,4 +78,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Onboarding);
+export default connect(mapStateToProps, mapDispatchToProps)(ShardSelector);

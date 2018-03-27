@@ -1,11 +1,12 @@
-const axios = require('axios');
+import { pubgApiWrapper as PUBGAPI } from 'pubg-api-wrapper';
 const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    axios.get('/status').then((response) => {
-        let data = response.data.data;
-        res.status(200).json(data);
+    const api = new PUBGAPI(process.env.PUBG_TOKEN);
+
+    api.getStatus().then((response) => {
+        res.status(200).json(response);
     }).catch((err) => {
         console.log(err);
         res.status(err.response.status).json({message: err.response.data});
