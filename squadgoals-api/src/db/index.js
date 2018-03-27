@@ -10,7 +10,7 @@ export class DbService {
             CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
             CREATE TABLE IF NOT EXISTS Players (
-                id VARCHAR(36) PRIMARY KEY,
+                id VARCHAR(40) PRIMARY KEY,
                 name VARCHAR(50)
             );
 
@@ -20,7 +20,7 @@ export class DbService {
             );
 
             CREATE TABLE IF NOT EXISTS PlayersGames (
-                players_id VARCHAR(36) REFERENCES Players,
+                players_id VARCHAR(40) REFERENCES Players,
                 games_id VARCHAR(36) REFERENCES Games,
                 PRIMARY KEY(players_id, games_id)
             );

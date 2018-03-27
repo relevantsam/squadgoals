@@ -27,6 +27,7 @@ router.get('/:matchId', (req, res) => {
 
     
     matches.getMatch(shard, req.params.matchId).then((response) => {
+        console.log(response);
         res.status(200).json(response);
     }).catch((err) => {
         console.log(err);
